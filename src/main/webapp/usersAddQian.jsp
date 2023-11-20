@@ -29,6 +29,135 @@
             background: #fff;
             width: 100%;
         }
+        .basic-grey {
+
+            margin-left:auto;
+
+            margin-right:auto;
+
+            max-width: 500px;
+
+            background: white;
+
+            padding: 25px 15px 25px 10px;
+
+            font: 12px Georgia, "Times New Roman", Times, serif;
+
+            color: #888;
+
+            text-shadow: 1px 1px 1px #FFF;
+
+            border:1px solid #E4E4E4;
+
+        }
+
+        .basic-grey h1 {
+
+            font-size: 25px;
+
+            padding: 0px 0px 10px 40px;
+
+            display: block;
+
+            border-bottom:1px solid #E4E4E4;
+
+            margin: -10px -15px 30px -10px;;
+
+            color: #888;
+
+        }
+
+        .basic-grey label {
+
+            display: block;
+
+            margin: 0px;
+
+        }
+
+        .basic-grey label>span {
+
+            float: left;
+
+            width: 20%;
+
+            text-align: right;
+
+            padding-right: 10px;
+
+            margin-top: 10px;
+
+            color: #888;
+
+        }
+
+        .basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+
+            border: 1px solid #DADADA;
+
+            color: #888;
+
+            height: 30px;
+
+            margin-bottom: 16px;
+
+            margin-right: 6px;
+
+            margin-top: 2px;
+
+            outline: 0 none;
+
+            padding: 3px 3px 3px 5px;
+
+            width: 70%;
+
+            font-size: 12px;
+
+            line-height:15px;
+
+            box-shadow: inset 0px 1px 4px #ECECEC;
+
+            -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+
+            -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+
+        }
+
+        .basic-grey textarea{
+
+            padding: 5px 3px 3px 5px;
+
+        }
+
+        .basic-grey select {
+            appearance:none;
+            -webkit-appearance:none;
+            -moz-appearance: none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            width: 70%;
+            height: 35px;
+            line-height: 25px;
+        }
+        .basic-grey textarea{
+            height:100px;
+        }
+        .basic-grey .button {
+            background: #E27575;
+            border: none;
+            padding: 10px 25px 10px 25px;
+            color: #FFF;
+            box-shadow: 1px 1px 5px #B6B6B6;
+            border-radius: 3px;
+            text-shadow: 1px 1px 1px #9E3F3F;
+            cursor: pointer;
+        }
+        .basic-grey .button:hover {
+            background: #CF7A7A;
+        }
+        .m{
+            margin-top: 50px;
+        }
     </style>
 
     <script type="text/javascript">
@@ -129,131 +258,82 @@
         }
     </script>
 </head>
-<body style="padding-top:220px;">
+<body style="padding-top:120px;">
 <%@ include file="qttop.jsp"%>
-<%@ include file="bht.jsp"%>
 <div class="index_about index">
     <div class="w1200">
         <h2 class="t">用户注册</h2>
         <p class="t_en"></p>
-        <div class="desc">
-            <table width="98%" height="667" border="1" align="center"
-                   cellpadding="3" cellspacing="1" bordercolor="#58AC22"
-                   style="border-collapse:collapse">
-                <form name="formAdd" id="formAdd">
-                    		<tr>
-			<td>
-				用户名称:
-			</td>
-            <td>
-                <input type="text" name="loginname" id="loginname" size="70px"/>
-            </td>
-
-		</tr>
-		<tr>
-			<td>
-				密码:
-			</td>
-            <td>
-                <input type="text" name="loginpw" id="loginpw" size="70px"/>
-            </td>
-
-		</tr>
-		<tr>
-			<td>
-				类型:
-			</td>
-            <td>
+        <form name="formAdd" id="formAdd"  class="basic-grey">
+            <h1>
+                注册
+            </h1>
+            <label>
+                <span>用户名：</span>
+                <input type="text" name="loginname" id="loginname"/>
+            </label>
+            <label>
+                <span>密码：</span>
+                <input type="text" name="loginpw" id="loginpw"/>
+            </label>
+            <label>
+                <span>类型：</span>
                 <select name="type" id="type" style="border:solid 1px #000000; color:#666666" onchange='$("#typename").val($(this).find("option:selected").text());'>
                     <option value="2">用户</option>
                 </select>
-            </td>
-
-		</tr>
-		<tr>
-			<td>
-				类型名称:
-			</td>
-            <td>
-                <input type="text" name="typename" id="typename" value="" readonly="readonly" size="70px"/>
-                <script type="text/javascript">
-                    $("#typename").val($("#type").find("option:selected").text());
+            </label>
+            <label>
+                <span>类型名称：</span>
+                <input type="text" name="typename" id="typename" value="" readonly="readonly"/>
+                <script type="text/javascript">$("#typename").val($("#type").find("option:selected").text());
                 </script>
-            </td>
-
-		</tr>
-		<tr>
-			<td>
-				姓名:
-			</td>
-            <td>
-                <input type="text" name="xingming" id="xingming" size="70px"/>
-            </td>
-
-		</tr>
-		<tr>
-			<td>
-				性别:
-			</td>
-            <td>
-                <select name="xingbie" id="xingbie" style="border:solid 1px #000000; color:#666666">
+            </label>
+            <label>
+                <span>姓名：</span>
+                <input type="text" name="xingming" id="xingming"/>
+            </label>
+            <label>
+                <span>性别：</span>
+                <select name="xingbie" id="xingbie">
                     <option value="男">男</option>
                     <option value="女">女</option>
                 </select>
-            </td>
-
-		</tr>
-		<tr>
-			<td>
-				年龄:
-			</td>
-            <td>
-                <input type="text" name="nianling" id="nianling" size="70px"/>
-            </td>
-
-		</tr>
-		<tr>
-			<td>
-				地址:
-			</td>
-            <td>
-                <input type="text" name="address" id="address" size="70px"/>
-            </td>
-
-		</tr>
-		<tr>
-			<td>
-				电话:
-			</td>
-            <td>
-                <input type="text" name="dianhua" id="dianhua" size="70px"/>
-            </td>
-
-		</tr>
-		<tr style="display: none;">
-			<td>
-				审核:
-			</td>
-            <td style="display: none">
-                <select name="shenhe" id="shenhe" style="border:solid 1px #000000; color:#666666">
-                    <option value="yes">yes</option>
-                    <option value="no">no</option>
-                </select>
-            </td>
-
-		</tr>
-
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td colspan="2">
-                            <input type="button" name="Submit5" value="提交" onClick="usersAdd();" />
-                            <input type="button" value="返回" onClick="javascript:history.back()"/>
-                            <%--<input type="reset" name="Submit22" value="重置" />--%>
-                        </td>
-                    </tr>
-                </form>
+            </label>
+            <label>
+                <span>年龄</span>
+                <input type="text" name="nianling" id="nianling" />
+            </label>
+            <label>
+                <span>电话号码：</span>
+                <input type="text" name="dianhua" id="dianhua" />
+            </label>
+            <table style="display: none;">
+                <tr>
+                    <td>
+                        地址:
+                    </td>
+                    <td>
+                        <input type="text" name="address" id="address" size="70px"/>
+                    </td>
+                </tr>
+                <tr style="display: none;">
+                    <td>
+                        审核:
+                    </td>
+                    <td style="display: none">
+                        <select name="shenhe" id="shenhe" style="border:solid 1px #000000; color:#666666">
+                            <option value="yes">yes</option>
+                            <option value="no">no</option>
+                        </select>
+                    </td>
+                </tr>
             </table>
-        </div>
+            <label>
+                <span>&nbsp;</span>
+                <input type="button" name="Submit5" value="注册" onClick="gouwucheAdd();" class="m"/>
+                <input type="button" value="返回" onClick="javascript:history.back()" class="m"/>
+            </label>
+        </form>
     </div>
 </div>
 <%@ include file="yqlj.jsp"%>

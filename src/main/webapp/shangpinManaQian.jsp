@@ -28,6 +28,82 @@
             background: #fff;
             width: 100%;
         }
+
+        .dhz{
+            text-align: center;
+            color: rgb(238, 238, 238);
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .dhz a{
+            color: #545b62;
+        }
+        .dhz a:hover{
+            color: #9a9afb;
+            border-color: #9a9afb;
+            background: #A9E4E9;
+        }
+        .xbf{
+            width: 1400px;
+            height: 210px;
+            margin-top: 10px;
+            background: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 20px;
+        }
+
+        .bqa{
+            border: 1px solid hsla(0,0%,100%,0);
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 2px;
+            height: 100%;
+            width: 100%
+        }
+
+        .mypic{
+            width: 200px;
+            height: 200px;
+            float: left;
+            border-radius: 20px;
+
+        }
+        .mchz{
+            float: left;
+            width: 400px;
+            height: 30px;
+
+        }
+        .sj{
+
+            margin-top: 50px;
+            margin-right: 900px;
+        }
+        .jghxl{
+
+            height: 30px;
+            margin-top: 70px;
+            margin-left: 700px;
+        }
+        .rmbys{
+            font-size: 20px;
+            color: #d61215;
+        }
+        .jgys{
+            font-size: 30px;
+            color: #d61215;
+        }
+        .shrys{
+            font-size: 15px;
+            color: #545b62;
+        }
+
+        .mmmmmm{
+            font-weight: bold;
+            font-size: 30px;
+            color: black;
+        }
     </style>
 </head>
 <script type="text/javascript">
@@ -38,17 +114,16 @@
         window.open(url, "_self");
     }
 </script>
-<body style="padding-top:220px;">
+<body style="padding-top:120px;">
 <%@ include file="qttop.jsp"%>
-<%@ include file="bht.jsp"%>
+
 <div class="index_about index">
     <div class="w1200">
-        <h2 class="t">商品</h2>
+        <h2 class="t">热销商品</h2>
         <p class="t_en"></p>
         <div class="desc">
             <form name="formSearch" id="formSearch" method="post" action="${contextPath}/${actionName}" style="width:100%">
         名称:<input type="text" style='border:solid 1px #000000; color:#666666' name="mingcheng" id="mingcheng" size="12px" value="${req.mingcheng}"/>&nbsp;&nbsp;
-        编号:<input type="text" style='border:solid 1px #000000; color:#666666' name="bianhao" id="bianhao" size="12px" value="${req.bianhao}"/>&nbsp;&nbsp;
         分类:
         <select style="border:solid 1px #000000; color:#666666;" name="zhongleiid" id="zhongleiid">
             <option value="">全部</option>
@@ -85,155 +160,80 @@
                 </c:choose>
             </c:forEach>
         </select>&nbsp;&nbsp;
-        单位:<input type="text" style='border:solid 1px #000000; color:#666666' name="danwei" id="danwei" size="12px" value="${req.danwei}"/>&nbsp;&nbsp;
-<%--        是否上架:--%>
-<%--        <select name="shenhe" id="shenhe" size="1px" >--%>
-<%--            <option value="">全部</option>--%>
-<%--            <option value="yes" <c:if test="${req.shenhe == 'yes'}">selected</c:if>>yes</option>--%>
-<%--            <option value="no" <c:if test="${req.shenhe == 'no'}">selected</c:if>>no</option>--%>
-<%--        </select>&nbsp;&nbsp;--%>
-<%--        用户:
-        <select name="usersid" id="usersid">
-            <option value="">全部</option>
-            <c:forEach items="${usersList}" var="s">
-                <c:choose>
-                    <c:when test="${s.id==req.usersid}">
-                        <option value="${s.id}" selected>
-                                ${s.loginname }
-                        </option>
-                    </c:when>
-                    <c:otherwise>
-                        <option value="${s.id}">
-                                ${s.loginname}
-                        </option>
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
-        </select>&nbsp;&nbsp;--%>
-
                 <input type="submit" name="Submit" value="查找" class='hsgqiehuanshitu'/>
             </form>
-            <table width="100%" border="0" align="center" cellpadding="3"
-                   cellspacing="1" bordercolor="00FFFF"
-                   style="border-collapse:collapse" class="newsline">
-                <tr>
-<%--                    <td width="40px" align="center" bgcolor="">序号</td>--%>
-                            <td bgcolor='' align="center">名称</td>
-        <td bgcolor='' align="center">编号</td>
-        <td bgcolor='' align="center">分类</td>
-        <td bgcolor='' align="center">品牌</td>
-        <td bgcolor='' align="center">图片</td>
-        <td bgcolor='' align="center">原价</td>
-        <td bgcolor='' align="center">现价</td>
-        <td bgcolor='' align="center">单位</td>
-        <td bgcolor='' align="center">是否上架</td>
-        <td bgcolor='' align="center">库存数量</td>
-        <td bgcolor='' align="center">销售数量</td>
-        <td bgcolor='' align="center">商家</td>
 
-                    <td width="40px" align="center" bgcolor="">详细</td>
-                </tr>
-                <c:forEach items="${pageInfo.records}" var="info" varStatus="s">
-                    <tr>
-<%--                        <td width="40px" align="center">--%>
-<%--                                ${s.index+1}--%>
-<%--                        </td>--%>
-                                    <td bgcolor="" align="center">
-                <c:choose>
-                    <c:when test="${fn:length(info.mingcheng)>'16'}">
-                        ${fn:substring(info.mingcheng,0,16)}...
-                    </c:when>
-                    <c:otherwise>
-                        ${info.mingcheng}
-                    </c:otherwise>
-                </c:choose>
-            </td>
-            <td bgcolor="" align="center">
-                <c:choose>
-                    <c:when test="${fn:length(info.bianhao)>'16'}">
-                        ${fn:substring(info.bianhao,0,16)}...
-                    </c:when>
-                    <c:otherwise>
-                        ${info.bianhao}
-                    </c:otherwise>
-                </c:choose>
-            </td>
-            <td bgcolor="" align="center">
-                <c:choose>
-                    <c:when test="${fn:length(info.zhonglei.mingcheng)>'16'}">
-                        ${fn:substring(info.zhonglei.mingcheng,0,16)}...
-                    </c:when>
-                    <c:otherwise>
-                        ${info.zhonglei.mingcheng}
-                    </c:otherwise>
-                </c:choose>
-            </td>
-            <td bgcolor="" align="center">
-                <c:choose>
-                    <c:when test="${fn:length(info.pinpai.pinpaimingcheng)>'16'}">
-                        ${fn:substring(info.pinpai.pinpaimingcheng,0,16)}...
-                    </c:when>
-                    <c:otherwise>
-                        ${info.pinpai.pinpaimingcheng}
-                    </c:otherwise>
-                </c:choose>
-            </td>
-            <td width='90px'>
-                <a href='${contextPath}/${info.image}' target='_blank'>
-                    <img src='${contextPath}/${info.image}' width="88" height="99" border="0"  onerror="this.src='${staticPath}/images/zanwu.jpg'" />
-                </a>
-            </td>
-            <td bgcolor="" align="center">
-                ${info.yuanshijiage}
-            </td>
-            <td bgcolor="" align="center">
-                ${info.jiage}
-            </td>
-            <td bgcolor="" align="center">
-                <c:choose>
-                    <c:when test="${fn:length(info.danwei)>'16'}">
-                        ${fn:substring(info.danwei,0,16)}...
-                    </c:when>
-                    <c:otherwise>
-                        ${info.danwei}
-                    </c:otherwise>
-                </c:choose>
-            </td>
-            <td bgcolor="" align="center">
-                <c:choose>
-                    <c:when test="${fn:length(info.shenhe)>'16'}">
-                        ${fn:substring(info.shenhe,0,16)}...
-                    </c:when>
-                    <c:otherwise>
-                        ${info.shenhe}
-                    </c:otherwise>
-                </c:choose>
-            </td>
-            <td bgcolor="" align="center">
-                ${info.kucunshuliang}
-            </td>
-            <td bgcolor="" align="center">
-                ${info.xiaoshoushuliang}
-            </td>
-            <td bgcolor="" align="center">
-                <c:choose>
-                    <c:when test="${fn:length(info.users.loginname)>'16'}">
-                        ${fn:substring(info.users.loginname,0,16)}...
-                    </c:when>
-                    <c:otherwise>
-                        ${info.users.loginname}
-                    </c:otherwise>
-                </c:choose>
-            </td>
 
-                        <td width="40px" align="center">
-                            <a href="${contextPath}/shangpinDetailQian/${info.id}">
-                                详细
-                            </a>
-                        </td>
-                    </tr>
-                </c:forEach>
-            </table>
+
+        <div class="dhz">
+            <c:forEach items="${pageInfo.records}" var="info" varStatus="s">
+            <div class="xbf">
+                    <a href="${contextPath}/shangpinDetailQian/${info.id}" class="bqa">
+                        <div class="tphz">
+                            <img src='${contextPath}/${info.image}' class="mypic"   onerror="this.src='${staticPath}/images/zanwu.jpg'" />
+                        </div>
+                        <div class="mchz">
+                         <%--名称--%>
+                            <span class="mmmmmm" >
+                            <c:choose>
+                                <c:when test="${fn:length(info.mingcheng)>'16'}">
+                                    ${fn:substring(info.mingcheng,0,16)}...
+                                </c:when>
+                                <c:otherwise>
+                                    ${info.mingcheng}
+                                </c:otherwise>
+                            </c:choose>
+                                </span>
+
+
+                        <%--品牌--%>
+                             <span class="mmmmmm">
+                             <c:choose>
+                                 <c:when test="${fn:length(info.pinpai.pinpaimingcheng)>'16'}">
+                                     ${fn:substring(info.pinpai.pinpaimingcheng,0,16)}...
+                                 </c:when>
+                                 <c:otherwise>
+                                     ${info.pinpai.pinpaimingcheng}
+                                 </c:otherwise>
+                             </c:choose>
+                                   </span>
+                                   <%--分类--%>
+                             <span class="mmmmmm">
+                            <c:choose>
+                                <c:when test="${fn:length(info.zhonglei.mingcheng)>'16'}">
+                                    ${fn:substring(info.zhonglei.mingcheng,0,16)}...
+                                </c:when>
+                                <c:otherwise>
+                                    ${info.zhonglei.mingcheng}
+                                </c:otherwise>
+                            </c:choose>
+                             </span>
+                        </div>
+                        <div class="jghxl">
+                            <span class="rmbys">￥</span>
+                            <span class="jgys">${info.jiage}</span>
+                            <span class="shrys"> ${info.xiaoshoushuliang}+人收货</span>
+                        </div>
+                        <div class="sj">
+                        <%--  商家--%>
+
+                            <c:choose>
+                                <c:when test="${fn:length(info.users.loginname)>'16'}">
+                                    ${fn:substring(info.users.loginname,0,16)}...
+                                </c:when>
+                                <c:otherwise>
+                                    ${info.users.loginname}
+                                </c:otherwise>
+                            </c:choose>
+
+                        </div>
+
+                    </a>
+
+            </div>
+            </c:forEach>
+        </div>
+
             <br>
             <%@ include file="common/fenye.jsp"%>
             <table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" bordercolor="#00FFFF"

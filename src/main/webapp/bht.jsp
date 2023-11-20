@@ -29,7 +29,7 @@
                 }
                 $("#ulLunbo").empty().html(ulLunboHtml.join(''));
                 $("#ulIndex").empty().html(ulIndexHtml.join(''));
-                $(".slideBox").slide({mainCell:".bd ul",effect:"top",autoPlay:true,delayTime:500});
+                $(".slideBox").slide({mainCell:".bd ul",effect:"left",autoPlay:true,delayTime:500});
             }
         }else {
             alert(resp.message);

@@ -6,6 +6,7 @@
     <%@include file="common/head.jsp" %>
     <link rel="stylesheet" type="text/css" href="${staticPath}/qtimages/css/style.css" />
     <link rel="stylesheet" type="text/css" href="${staticPath}/qtimages/css/mislider.css" />
+
     <style>
         .dd a:hover {
             color: red;
@@ -27,6 +28,109 @@
             background: #fff;
             width: 100%;
         }
+        .all{
+            width: 100%;
+            height: 810px;
+            padding-bottom: 50px;
+            margin-top: -80px;
+            margin-bottom: 1px;
+        }
+        .all .content{
+            margin-top: 0px;
+            float: left;
+        }
+        #content{
+            /* 	border: 1px solid red; */
+            width: 1200px;
+            margin-top: -80px;
+            margin: auto;
+        }
+        #content .a1{
+            float: left;
+            margin-left: 10px;
+        }
+        #content .a1 .big{
+            /* float: left; */
+            width: 450px;
+            height: 400px;
+        }
+        #content .a11 ul li{
+            list-style: none;
+            float: left;
+            margin: 20px 15px;
+        }
+        .a11 ul li img{
+            border: 3px white solid;
+            width: 80px;
+            height: 80px;
+        }
+        .a11 ul li img:hover{
+            border: 3px #FF4F0D solid;
+        }
+        .a2{
+            float: left;
+            margin-left: 90px;
+        }
+        .a21 .color{
+            color: #758188;
+        }
+        .a21 .a211{
+            background-color: #F2F5F8;
+            color: #758188;
+        }
+        .a21 .a211 .prices,.shic{
+            margin-left: 40px;
+        }
+        .a21 .a211 .prices{
+            color: #FF4F0D;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .a21 .a211 .prices2{
+            text-decoration: line-through;
+        }
+        .a21 .a211 .yis{
+            margin-left: 230px;
+        }
+        .a22{
+            background-color: #F6F9FB;
+        }
+        .a22 span,p{
+            margin-top: 10px;
+        }
+        .a22 .neir{
+            margin-left: 50px;
+        }
+        .a23{
+            margin-top: 10px;
+        }
+        .a25{
+            margin-top: 30px;
+        }
+        .a25 input{
+            display: inline-block;
+            width: 100px;
+            height: 60px;
+            border-radius: 30px;
+            margin-left: 20px;
+        }
+        .a25 .a25color1{
+            background-color: #FFEEE8;
+            color: #FF4F0D;
+            font-size: 20px;
+            font-weight: bolder;
+            border: 1px #FF4F0D solid;
+        }
+        .a25 .a25color2{
+            background-color: #FF4F0D;
+            color: white;
+            font-size: 20px;
+            font-weight: bolder;
+            border: 1px #FF4F0D solid;
+        }
+        .m{
+            margin-top: 50px;
+        }
     </style>
     <script language="javascript">
         function down(fujianPath) {
@@ -39,7 +143,6 @@
         function goDingdanAddQian() {
             var url = "${contextPath}/dingdanAddQian.jsp?jine=${shangpin.jiage}&shangpinid=${shangpin.id}";
             window.location.href = url;
-
         }
         //跳转到子表dingdanxiang添加页面
         function shangpindingdanxiangAddQian(id) {
@@ -84,172 +187,64 @@
 
     </script>
 </head>
-<body style="padding-top:220px;">
+<body style="padding-top:120px;">
 <%@ include file="qttop.jsp"%>
-<%@ include file="bht.jsp"%>
 <div class="index_about index">
     <div class="w1200">
-        <h2 class="t">商品信息</h2>
+        <h2 class="t">商品详情</h2>
         <p class="t_en"></p>
-        <div class="desc">
-            <table width="100%" border="0" align="center" cellpadding="3"
-                   cellspacing="1" bordercolor="#00FFFF"
-                   style="border-collapse:collapse" class="newsline">
-    <tr>
-        <td width="39%" height="44px">
-            名称:
-        </td>
-        <td width="39%">
-            ${shangpin.mingcheng }
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            编号:
-        </td>
-        <td width="39%">
-            ${shangpin.bianhao }
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            分类:
-        </td>
-        <td width="39%">
-            ${shangpin.zhonglei.mingcheng}
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            品牌:
-        </td>
-        <td width="39%">
-            ${shangpin.pinpai.pinpaimingcheng}
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            内容介绍:
-        </td>
-        <td width="39%">
-            ${shangpin.neirong }
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            图片:
-        </td>
-        <td idth="39%" height="240px">
-            <img src="${contextPath}/${shangpin.image}" alt="" width="228px" height="215px" border="0" onerror="this.src='${staticPath}/images/zanwu.jpg'" />
-            <br />
-        <c:choose>
-            <c:when test='${ null != shangpin.image && !shangpin.image.equals("")}'>
-                <a href="#" onclick="down('${shangpin.image}')" style="font-size: 11px;color: red">下载</a>
-            </c:when>
-            <c:otherwise>
-                暂无
-            </c:otherwise>
-        </c:choose>
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            原价:
-        </td>
-        <td width="39%">
-            ${shangpin.yuanshijiage }
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            现价:
-        </td>
-        <td width="39%">
-            ${shangpin.jiage }
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            单位:
-        </td>
-        <td width="39%">
-            ${shangpin.danwei }
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            是否上架:
-        </td>
-        <td width="39%">
-            ${shangpin.shenhe}
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            库存数量:
-        </td>
-        <td width="39%">
-            ${shangpin.kucunshuliang }
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            销售数量:
-        </td>
-        <td width="39%">
-            ${shangpin.xiaoshoushuliang }
-        </td>
-
-    </tr>
-    <tr>
-        <td width="39%" height="44px">
-            商家:
-        </td>
-        <td width="39%">
-            ${shangpin.users.loginname}
-        </td>
-
-    </tr>
-
-                <tr>
-                    <td colspan=3 align=center>
-                        <input type="button" value="立即购买"  onClick="goDingdanAddQian();" />
-                <%--<input type="button" value="订单项添加" onclick="shangpindingdanxiangAddQian(${shangpin.id})"/>--%>
-                <%--<input type="button" value="订单项查看" onclick="shangpindingdanxiangGetByshangpinidQian(${shangpin.id})"/>--%>
-                <input type="button" value="购物车添加" onclick="shangpingouwucheAddQian(${shangpin.id})"/>
-                <%--<input type="button" value="购物车查看" onclick="shangpingouwucheGetByshangpinidQian(${shangpin.id})"/>--%>
-                <%--<input type="button" value="商品评价添加" onclick="shangpinpingjiaAddQian(${shangpin.id})"/>--%>
-                <input type="button" value="商品评价查看" onclick="shangpinpingjiaGetByshangpinidQian(${shangpin.id})"/>
-                <input type="button" value="商品收藏添加" onclick="shangpinshoucangAddQian(${shangpin.id})"/>
-                <%--<input type="button" value="商品收藏查看" onclick="shangpinshoucangGetByshangpinidQian(${shangpin.id})"/>--%>
-
-                        <input type=button name=Submit5 value=返回
-                               onClick="javascript:history.back()"/>
-                        <%--<input type="button" value="打印" style="width: 60px;" onClick="javascript:window.print()" />--%>
-                    </td>
-                </tr>
-            </table>
+<div id="all" class="m">
+    <div style="clear: both;"></div>
+    <div id="content">
+        <div class="a1">
+            <img src="${contextPath}/${shangpin.image}" onerror="this.src='${staticPath}/images/zanwu.jpg'" class="big"/>
+        </div>
+        <div class="a2">
+            <h2>${shangpin.mingcheng }</h2>
+            <div class="a21">
+                <div class="a211">
+                    <span class="color">售价</span>
+                    <span class="prices">￥${shangpin.yuanshijiage }</span>
+                    <span class="yis">已售${shangpin.xiaoshoushuliang }件</span>
+                </div>
+                <div class="a22">
+                    <p></p>
+                    <span class="color">分类</span>
+                    <span class="neir"> ${shangpin.zhonglei.mingcheng}</span>
+                    <p></p>
+                    <span class="color">编号</span>
+                    <span class="neir">${shangpin.bianhao }</span>
+                    <p></p>
+                    <span class="color">内容介绍</span>
+                    <span class="neir"> ${shangpin.neirong }</span>
+                    <p></p>
+                    <span class="color">库存数量</span>
+                    <span class="neir">${shangpin.kucunshuliang }</span>
+                </div>
+                <div class="a23">
+                    <p></p>
+                    <span class="color">配送说明</span>
+                    <p>北京、上海、广州、深圳、天津、重庆、南京、长沙</p>
+                    <span class="color">配送至</span>
+                    <p>郑州</p>
+                    <span class="color">说明</span>
+                    <p>深圳大鹏新区暂不配送</p>
+                </div>
+                <div class="a25">
+                            <input type="button" value="立即购买"  onClick="goDingdanAddQian();" />
+                            <input type="button" value="购物车添加" onclick="shangpingouwucheAddQian(${shangpin.id})"/>
+                            <input type="button" value="商品评价查看" onclick="shangpinpingjiaGetByshangpinidQian(${shangpin.id})"/>
+                            <input type="button" value="商品收藏添加" onclick="shangpinshoucangAddQian(${shangpin.id})"/>
+                            <input type=button name=Submit5 value=返回 onClick="javascript:history.back()"/>
+                </div>
+            </div>
         </div>
     </div>
+    <div style="clear: both;"></div>
 </div>
-<%@ include file="yqlj.jsp"%>
-<%@ include file="qtdown.jsp"%>
+    </div>
+</div>
 <%@ include file="kefutiao.jsp"%>
-<%--<a class='bshareDiv' href='http://www.bshare.cn/share'>分享按钮</a>
-<script type='text/javascript' charset='utf-8'
-		src='http://static.bshare.cn/b/buttonLite.js#uuid=&amp;style=3&amp;fs=4&amp;textcolor=#fff&amp;bgcolor=#9C3&amp;text=分享到'></script>
---%>
 </body>
 </html>
 

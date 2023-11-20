@@ -4,8 +4,8 @@ body {
 }
 input[type=submit],input[name=submit]{
     color: #fff;
-    background-color:#FF66CC;
-    border-color:#993399;
+    background-color: #3fc5ff;
+    border-color: #4f74f3;
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
@@ -79,7 +79,7 @@ a:active:hover{
 .form-control{
     width: 300px;
     margin: 10px;
-    border:1px solid #9c5555 !important;
+    border:1px solid #4f74f3 !important;
     float:left;
 	
 	
@@ -88,40 +88,40 @@ a:active:hover{
     width: 100px;
     margin: 10px;
 	height:28px;
-    border:1px solid #996666 !important;
+    border:1px solid #4f74f3 !important;
     border-radius: 6px;
 }
 .form-control3{
     width: 600px;
     margin: 10px;
 	height:58px;
-    border:1px solid #996666 !important;
+    border:1px solid #4f74f3 !important;
     border-radius: 6px;
 }
 .form-control4{
     width: 140px;
     margin: 10px;
 	height:28px;
-    border:1px solid #996666 !important;
+    border:1px solid #4f74f3 !important;
     border-radius: 6px;
 }
 .form-control5{
     width: 600px;
     margin: 10px;
 	height:28px;
-    border:1px solid #996666 !important;
+    border:1px solid #4f74f3 !important;
     border-radius: 6px;
 }
 
 .fy{text-align:center;padding-top:20px}
 .fy a{display:inline-block;padding:4px 10px;border:1px solid #f5e703;margin:0 2px;color:#d75e15;text-decoration:none}
-.fy .ac{background:#3c9fee;border-color:#83c414;color:#fff}
-.fy a:hover{background:#FFCC99;border-color:#83c414;color:#fff}
+.fy .ac{background:#3c9fee;border-color: #cb48ff;color:#fff}
+.fy a:hover{background: #cb48ff;border-color: #3fc5ff;color:#fff}
 
 .button, button,  input[type="button"]{
 	display: inline-block;
 	
-	background:#FF9966;
+	background: #974df1;
 	color: #fff;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease-in-out;
@@ -137,12 +137,12 @@ a:active:hover{
 .button:hover, .button:focus, button:hover, button:focus, input[type="button"]:hover,  input[type="button"]:focus, input[type="reset"]:focus {
 	outline: none;
 	cursor: pointer;
-	background:#CC3366;
+	background: #4f74f3;
 	color: #fff;
 	border-radius: 4px;
 }
 
 .button1:hover {
-    background-color:#FFCC99;
+    background-color: #3fc5ff;
     color: white;
 }

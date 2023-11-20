@@ -7,7 +7,9 @@
 <div class="header">
     <div class="top_bar">
         <div class="w1200">
-            <div class="fl">欢迎进入！</div>
+            <div style="font-size: 25px;color: #ffffff;float: left;">欢迎进入！<a href="#"> <span style="font-size: 35px;color: #974df1">网络购物商城 </span>
+            </a></div>
+
             <div style=" float: left; margin-left: 10px; " class="dd">
                 <c:if test="${sessionScope.user==null}">
                     <a href="${contextPath}/userlog.jsp" style="cursor:pointer;">登录</a> &nbsp;&nbsp;<a
@@ -16,40 +18,34 @@
                 <c:if test="${sessionScope.user!=null}">
                     ${sessionScope.user.loginname},[${sessionScope.user.typename}]&nbsp;
                     <a href="${contextPath}/userlogout.jsp" onclick="return confirm('确定要退出？')">退出</a>&nbsp;&nbsp;<a
-                    href="${contextPath}/main.jsp">后台</a>
+                    href="${contextPath}/main.jsp">个人信息</a>
                 </c:if>
             </div>
-            <%--<ul class="fr">
+            <ul class="fr">
                 <li class="wx"><a href="javascript:;">官方微信</a>
                     <div class="wxerweima">
-                        <img src="qtimages/images/erweima.png" />
+                        <img src="static/img/二维码.png" />
                     </div></li>
-                <li><a href="#">官方微博</a>
-                </li>
-            </ul>--%>
+                <li><a href="#">官方微博</a></li>
+            </ul>
         </div>
     </div>
-    <div class="top">
-        <div class="w1200">
-            <div class="logo fl">
-                <a href="#"> <span style="font-size: 35px;color: green">网络购物商城 </span><%--<img src="qtimages/images/logo.png" alt="" />--%>
-                </a>
-            </div>
-            <!--		<div class="search fl">
-                        <form action="news.jsp">
-                            <input type="text" name="biaoti" id="biaoti" placeholder="请输入搜索内容"/>
-                            <input type="submit" value=""/>
-                        </form>
-                    </div>-->
-            <%--<div class="tel fr">400-800-8888</div>--%>
-        </div>
-    </div>
+<%--    <div class="top">--%>
+<%--        <div class="w1200">--%>
+<%--            <div class="logo fl">--%>
+<%--                <a href="#"> <span style="font-size: 35px;color: #974df1">网络购物商城 </span>--%>
+<%--                </a>--%>
+<%--            </div>--%>
+
+<%--        </div>--%>
+<%--    </div>--%>
     <div class="nav">
         <div class="w1200">
             <ul>
                 <li><a href="${contextPath}/default.jsp">网站首页</a></li>
-                <li><a href='${contextPath}/dxManaQian'>介绍</a></li>
+
                 <li><a href='${contextPath}/gonggaoManaQiantp'>公告</a></li>
+
                 <li><a href="">商品信息</a>
                     <div class="sub_nav">
                         <ul>
@@ -73,9 +69,42 @@
                     </div>
                 </li>
                 <!--yoxulixuyaxn-->
-                <li><a href="${contextPath}/login.jsp">后台管理</a>
+                <li><a href="${contextPath}/login.jsp">个人信息</a>
                 </li>
+                <li><a href='${contextPath}/dxManaQian'>介绍</a></li>
             </ul>
         </div>
+
     </div>
 </div>
+<div class="go-top">
+    <a href="${contextPath}/gouwucheManaMyQian" style="cursor:pointer">
+    <img src="static/qtimages/images/R-C.png" alt="" height="60px" width="60px">
+    </a>
+</div>
+<style>
+    .go-top {
+        z-index: 2;
+        position: fixed; /* 设置fixed固定定位 */
+        bottom: 200px; /* 距离浏览器窗口下边框20px */
+        right: 60px; /* 距离浏览器窗口右边框20px */
+        transform: rotateY(180deg);
+        background-size:100% 100%;
+        width: 60px;
+        height: 60px;
+        transition: all 0.5s;
+    }
+    .go-top a {
+        display: block;          /* 将<a>标签设为块元素，用于美化样式 */
+        text-decoration: none;    /* 取消超链接下画线 */
+        border: 1px solid #ccc;       /* 设置边框样式 */
+        padding: 0px;        /* 设置内边距 */
+        border-radius: 5px;          /* 设置圆角矩形 */
+    }
+    .go-top a:hover{
+        background-color: mediumslateblue;
+        transform: rotateY(0deg);
+        bottom: 210px;
+    }
+
+</style>

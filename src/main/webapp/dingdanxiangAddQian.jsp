@@ -78,9 +78,8 @@
         }
     </script>
 </head>
-<body style="padding-top:220px;">
+<body style="padding-top:120px;">
 <%@ include file="qttop.jsp"%>
-<%@ include file="bht.jsp"%>
 <div class="index_about index">
     <div class="w1200">
         <h2 class="t">订单项添加</h2>

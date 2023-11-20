@@ -28,14 +28,72 @@
 			background: #fff;
 			width: 100%;
 		}
+
+
+		.main-tit {
+			text-align: center;
+			color: rgb(238, 238, 238);
+			font-size: 24px;
+			margin: 20px 0;
+		}
+		.rush-list {
+			width: 1400px;
+			margin: 50px auto 0;
+			padding: 5px;
+			overflow: hidden;
+			transition: all .4s;
+		}
+
+		.rush-item {
+			display: flex;
+
+			float: left;
+		}
+
+		.rush-item:nth-child(1), .rush-item:nth-child(2), .rush-item:nth-child(3) {
+			margin-top: 0;
+		}
+
+		.shadow {
+			margin-right: 40px;
+			height: 190px;
+			width: 100%;
+			transition: all .3s;
+			border-radius: 5px;
+			overflow: hidden;
+		}
+
+		.shadow:hover {
+			transform: translateY(-5px);
+			box-shadow: 0px 5px 10px #dedede;
+		}
+
+		.sec3-img {
+			width: 190px;
+			height: 190px;
+			cursor: pointer;
+			float: left;
+			position: relative;
+		}
+		.info {
+			overflow: hidden;
+			padding-left: 25px;
+			background: #9a9afb;
+			height: 100%;
+		}
+		.da{
+			color: white;
+			font-size: 20px;
+		}
+
 	</style>
 </head>
-<body style="padding-top:220px;">
+<body style="padding-top:120px;">
 <%@ include file="qttop.jsp"%>
 <%@ include file="bht.jsp"%>
 <div class="index_about index">
 	<div class="w1200">
-		<h2 class="t">商品</h2>
+		<h2 class="t">最新商品</h2>
 		<p class="t_en"></p>
 		<div class="desc">
 			<form name="formSearch" id="formSearch" method="post" action="${contextPath}/shangpinManaQiantp" style="width:100%">
@@ -78,70 +136,51 @@
             </c:forEach>
         </select>&nbsp;&nbsp;
         单位:<input type="text" name="danwei" id="danwei" size="15px" value="${req.danwei}"/>&nbsp;&nbsp;
-<%--        是否上架:--%>
-<%--        <select name="shenhe" id="shenhe">--%>
-<%--            <option value="">全部</option>--%>
-<%--            <option value="yes" <c:if test="${req.shenhe == 'yes'}">selected</c:if>>yes</option>--%>
-<%--            <option value="no" <c:if test="${req.shenhe == 'no'}">selected</c:if>>no</option>--%>
-<%--        </select>&nbsp;&nbsp;--%>
-<%--        用户:
-        <select name="usersid" id="usersid">
-            <option value="">全部</option>
-            <c:forEach items="${usersList}" var="s">
-                <c:choose>
-                    <c:when test="${s.id==req.usersid}">
-                        <option value="${s.id}" selected>
-                                ${s.loginname }
-                        </option>
-                    </c:when>
-                    <c:otherwise>
-                        <option value="${s.id}">
-                                ${s.loginname}
-                        </option>
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
-        </select>&nbsp;&nbsp;--%>
-
 				<input type="submit" name="Submit" value="查找" class='hsgqiehuanshitu'/>
 			</form>
-			<table width="100%" border="0" align="center" cellpadding="3"
-				   cellspacing="1" bordercolor="00FFFF"
-				   style="border-collapse:collapse" class="newsline">
-				<tr>
-					<c:forEach items="${pageInfo.records}" var="info" varStatus="s">
-					<td align="center">
-						<table width="160" height="160" border="0" cellpadding="0" cellspacing="0">
-							<tr>
-								<td align="center">
-									<a href="${contextPath}/shangpinDetailQian/${info.id}">
-										<img src="${contextPath}/${info.image}" width="240px" height="240px" border="0" onerror="this.src='${staticPath}/images/zanwu.jpg'"/>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td height="26" align="center">
 
-									<a href="${contextPath}/shangpinDetailQian/${info.id}">
-										<c:if test="${fn:length(info.mingcheng)>'16'}">
-											${fn:substring(info.mingcheng,0,16)}...
-										</c:if>
-										<c:if test="${fn:length(info.mingcheng)<='16'}">
-											${info.mingcheng}
-										</c:if>
-									</a>
 
-								</td>
-							</tr>
-						</table>
-					</td>
+
+
+
+
+		<div class="main-tit">
+			<section class="section3">
+				<ul class="rush-list">
+						<c:forEach items="${pageInfo.records}" var="info" varStatus="s">
+					<li class="rush-item">
+						<div class="shadow">
+							<div class="sec3-img">
+								<a href="${contextPath}/shangpinDetailQian/${info.id}">
+									<img src="${contextPath}/${info.image}"height="190px" width="200px" border="0"   onerror="this.src='${staticPath}/images/zanwu.jpg'"/>
+								</a>
+							</div>
+							<div class="info">
+								<a href="${contextPath}/shangpinDetailQian/${info.id}" class="da">
+									<c:if test="${fn:length(info.mingcheng)>'16'} ">
+										${fn:substring(info.mingcheng,0,16)}...
+									</c:if>
+									<c:if test="${fn:length(info.mingcheng)<='16'}">
+										${info.mingcheng}
+									</c:if>
+								</a>
+							</div>
+						</div>
+					</li>
 					<c:if test="${(s.index+1)%4==0}">
-				</tr><tr>
-				</c:if>
-				</c:forEach>
-			</tr>
-			</table>
-			<br>
+					</c:if>
+					</c:forEach>
+				</ul>
+			</section>
+		</div>
+
+
+
+
+
+
+
+
 			<%@ include file="common/fenye.jsp"%>
 			<table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" bordercolor="#00FFFF"
 				   style="border-collapse:collapse" class="newsline">

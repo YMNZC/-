@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
-    <title>后台登陆</title>
+    <title>个人信息</title>
     <%@include file="common/head.jsp" %>
 
     <link rel="shortcut icon" href="${staticPath}/favicon.ico" type="image/x-icon"/>
@@ -70,7 +70,7 @@
 
 </script>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" background="${staticPath}/images/img/login.png">
-<div class="login-logo"><h1>后台登录</h1></div>
+<div class="login-logo"><h1>个人信息</h1></div>
 <div class="login-box">
     <form action="" method="post" name="form1" style="display: inline"
           class="layui-form layui-form-pane">

@@ -28,6 +28,44 @@
             background: #fff;
             width: 100%;
         }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table caption{
+            font-size: 2em;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+
+        th,td{
+            border: 1px solid #999;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        table thead tr{
+            background-color: #008c8c;
+            color: #fff;
+        }
+
+        table tbody tr:nth-child(odd){
+            background-color: #eee;
+        }
+
+        table tbody tr:hover{
+            background-color: #ccc;
+        }
+
+        table tbody tr td:first-child{
+            color: #f40;
+        }
+
+        table tfoot tr td{
+            text-align: right;
+            padding-right: 20px;
+        }
     </style>
 </head>
 <script type="text/javascript">
@@ -38,9 +76,8 @@
         window.open(url, "_self");
     }
 </script>
-<body style="padding-top:220px;">
+<body style="padding-top:120px;">
 <%@ include file="qttop.jsp"%>
-<%@ include file="bht.jsp"%>
 <div class="index_about index">
     <div class="w1200">
         <h2 class="t">商品评价</h2>
@@ -49,7 +86,7 @@
             <form name="formSearch" id="formSearch" method="post" action="${contextPath}/${actionName}" style="width:100%">
         评语:<input type="text" style='border:solid 1px #000000; color:#666666' name="biaoti" id="biaoti" size="12px" value="${req.biaoti}"/>&nbsp;&nbsp;
         商品:
-        <select style="border:solid 1px #000000; color:#666666;" name="shangpinid" id="shangpinid">
+        <select style="border:solid 1px #000000; color:#666666;height: 25px;" name="shangpinid" id="shangpinid">
             <option value="">全部</option>
             <c:forEach items="${shangpinList}" var="s">
                 <c:choose>
@@ -90,16 +127,15 @@
             <table width="100%" border="0" align="center" cellpadding="3"
                    cellspacing="1" bordercolor="00FFFF"
                    style="border-collapse:collapse" class="newsline">
-                <tr>
+                <thead>
 <%--                    <td width="40px" align="center" bgcolor="">序号</td>--%>
-                            <td bgcolor='' align="center">评语</td>
-        <td bgcolor='' align="center">分数（范围1-5）</td>
-        <td bgcolor='' align="center">评价时间</td>
-        <td bgcolor='' align="center">商品</td>
-        <td bgcolor='' align="center">用户</td>
-
-                    <td width="40px" align="center" bgcolor="">详细</td>
-                </tr>
+    <th bgcolor='' align="center">评语</th>
+        <th bgcolor='' align="center">分数（范围1-5）</th>
+        <th bgcolor='' align="center">评价时间</th>
+        <th bgcolor='' align="center">商品</th>
+        <th bgcolor='' align="center">用户</th>
+    <th width="40px" align="center" bgcolor=""></th>
+                </thead>
                 <c:forEach items="${pageInfo.records}" var="info" varStatus="s">
                     <tr>
 <%--                        <td width="40px" align="center">--%>
