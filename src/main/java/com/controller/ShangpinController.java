@@ -349,7 +349,7 @@ public class ShangpinController extends BaseController{
         pageWrap.setModel(req);
         pageWrap.setPageNum(pageNo);
         //设置每页最多几条数据，默认为8条
-        //pageWrap.setPageSize(8);
+        pageWrap.setPageSize(16);
         PageWrap.SortData sortData=new PageWrap.SortData();
         sortData.setDirection("DESC");
         sortData.setProperty(sortProperty);
