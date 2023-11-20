@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0efdb38c-e9f9-437f-bfe2-d5bc554e7efa" name="Default Changelist" comment="git remote add origin https://github.com/YMNZC/YMNZC.git&#10;git branch -M main&#10;git push -u origin main">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/qtimages/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/qtimages/css/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="0efdb38c-e9f9-437f-bfe2-d5bc554e7efa" name="Default Changelist" comment="git remote add origin https://github.com/YMNZC/YMNZC.git&#10;git branch -M main&#10;git push -u origin main" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -220,7 +218,7 @@
       <workItem from="1700446652079" duration="436000" />
       <workItem from="1700447318657" duration="589000" />
       <workItem from="1700448272669" duration="845000" />
-      <workItem from="1700449307800" duration="591000" />
+      <workItem from="1700449307800" duration="657000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1699457654013</created>
@@ -257,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700449658040</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="git remote add origin https://github.com/YMNZC/YMNZC.git&#10;git branch -M main&#10;git push -u origin main">
+      <created>1700449908511</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700449908511</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
